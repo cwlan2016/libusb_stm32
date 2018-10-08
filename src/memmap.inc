@@ -40,6 +40,12 @@
         #define RCC_APB1RSTR    0x10
         #define RCC_APB1ENR     0x1C
         #define UID_BASE        0x1FFFF7AC
+    #elif defined(STM32L432xx) || defined(STM32L433xx) || \
+          defined(STM32L442xx) || defined(STM32L443xx) || \
+          defined(STM32L452xx) || defined(STM32L462xx) || \
+        #define RCC_APB1RSTR    0x38
+        #define RCC_APB1ENR     0x58
+        #define UID_BASE        0x1FFF7590
     #else
         #define RCC_APB1RSTR    0x28
         #define RCC_APB1ENR     0x38

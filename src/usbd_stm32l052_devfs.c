@@ -41,6 +41,15 @@
 
 #define STATUS_VAL(x)   (USBD_HW_BC | (x))
 
+#if defined(STM32L432xx) || defined(STM32L433xx) || \
+    defined(STM32L442xx) || defined(STM32L443xx) || \
+    defined(STM32L452xx) || defined(STM32L462xx)
+    #define APB1RSTR            APB1RSTR1
+    #define APB1ENR             APB1ENR1
+    #define RCC_APB1ENR_USBEN   RCC_APB1ENR1_USBFSEN
+    #define RCC_APB1RSTR_USBRST RCC_APB1RSTR1_USBFSRST
+#endif
+
 typedef struct {
     uint16_t    addr;
     uint16_t    cnt;
